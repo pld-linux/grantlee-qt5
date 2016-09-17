@@ -1,16 +1,16 @@
 %define		qt_ver		5.2.0
-%define		major_ver	5.0
+%define		major_ver	5.1
 
 Summary:	Grantlee - set of frameworks for use with Qt 5
 Summary(pl.UTF-8):	Grantlee - zbiór szkieletów do wykorzystania z Qt 5
 Name:		grantlee-qt5
-Version:	5.0.0
+Version:	5.1.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.grantlee.org/grantlee-%{version}.tar.gz
-# Source0-md5:	feb7f82d08e046fe078ea475dee710f6
-URL:		http://www.gitorious.org/grantlee/pages/Home
+# Source0-md5:	57989ae9f7c113e682ef1713a6f1e92a
+URL:		http://www.grantlee.org
 BuildRequires:	Qt5Core-devel >= %{qt_ver}
 BuildRequires:	Qt5Gui-devel >= %{qt_ver}
 BuildRequires:	Qt5Network-devel >= %{qt_ver}
@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGELOG README
+%doc AUTHORS CHANGELOG README.md
 %attr(755,root,root) %{_libdir}/libGrantlee_Templates.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libGrantlee_Templates.so.5
 %attr(755,root,root) %{_libdir}/libGrantlee_TextDocument.so.*.*.*
