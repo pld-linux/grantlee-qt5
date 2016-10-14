@@ -1,4 +1,4 @@
-%define		qt_ver		5.2.0
+%define		qt_ver		5.3.0
 %define		major_ver	5.1
 
 Summary:	Grantlee - set of frameworks for use with Qt 5
@@ -10,7 +10,7 @@ License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.grantlee.org/grantlee-%{version}.tar.gz
 # Source0-md5:	57989ae9f7c113e682ef1713a6f1e92a
-URL:		http://www.grantlee.org
+URL:		http://www.grantlee.org/
 BuildRequires:	Qt5Core-devel >= %{qt_ver}
 BuildRequires:	Qt5Gui-devel >= %{qt_ver}
 BuildRequires:	Qt5Network-devel >= %{qt_ver}
@@ -20,7 +20,7 @@ BuildRequires:	Qt5Test-devel >= %{qt_ver}
 BuildRequires:	Qt5WebKit-devel >= %{qt_ver}
 BuildRequires:	Qt5Widgets-devel >= %{qt_ver}
 BuildRequires:	Qt5XmlPatterns-devel >= %{qt_ver}
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.1
 BuildRequires:	qt5-build >= %{qt_ver}
 BuildRequires:	qt5-qmake >= %{qt_ver}
 BuildRequires:	qt5-linguist >= %{qt_ver}
