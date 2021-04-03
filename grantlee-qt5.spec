@@ -1,15 +1,18 @@
+
+%bcond_without	tests		# unit tests
+
 %define		qt_ver		5.3.0
-%define		major_ver	5.1
+%define		major_ver	5.2
 
 Summary:	Grantlee - set of frameworks for use with Qt 5
 Summary(pl.UTF-8):	Grantlee - zbiór szkieletów do wykorzystania z Qt 5
 Name:		grantlee-qt5
-Version:	5.1.0
+Version:	5.2.0
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.grantlee.org/grantlee-%{version}.tar.gz
-# Source0-md5:	57989ae9f7c113e682ef1713a6f1e92a
+# Source0-md5:	6239b3703674f88b2236d30d0ed67eea
 URL:		http://www.grantlee.org/
 BuildRequires:	Qt5Core-devel >= %{qt_ver}
 BuildRequires:	Qt5Gui-devel >= %{qt_ver}
@@ -20,7 +23,7 @@ BuildRequires:	Qt5Test-devel >= %{qt_ver}
 BuildRequires:	Qt5WebKit-devel >= %{qt_ver}
 BuildRequires:	Qt5Widgets-devel >= %{qt_ver}
 BuildRequires:	Qt5XmlPatterns-devel >= %{qt_ver}
-BuildRequires:	cmake >= 3.1
+BuildRequires:	cmake >= 3.5
 BuildRequires:	qt5-build >= %{qt_ver}
 BuildRequires:	qt5-qmake >= %{qt_ver}
 BuildRequires:	qt5-linguist >= %{qt_ver}
@@ -63,6 +66,11 @@ cd build
 %cmake ..
 
 %{__make}
+
+%if %{with tests}
+QT_QPA_PLATFORM=offscreen \
+%{__make} test ARGS=-V
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
