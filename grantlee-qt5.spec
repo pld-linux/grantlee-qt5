@@ -2,17 +2,17 @@
 %bcond_without	tests		# unit tests
 
 %define		qt_ver		5.3.0
-%define		major_ver	5.2
+%define		major_ver	5.3
 
 Summary:	Grantlee - set of frameworks for use with Qt 5
 Summary(pl.UTF-8):	Grantlee - zbiór szkieletów do wykorzystania z Qt 5
 Name:		grantlee-qt5
-Version:	5.2.0
-Release:	2
+Version:	5.3.1
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	http://downloads.grantlee.org/grantlee-%{version}.tar.gz
-# Source0-md5:	6239b3703674f88b2236d30d0ed67eea
+Source0:	https://github.com/steveire/grantlee/releases/download/v%{version}/grantlee-%{version}.tar.gz
+# Source0-md5:	4ef8eae5dd61e3c7603d76208eb4d922
 URL:		http://www.grantlee.org/
 BuildRequires:	Qt5Core-devel >= %{qt_ver}
 BuildRequires:	Qt5Gui-devel >= %{qt_ver}
