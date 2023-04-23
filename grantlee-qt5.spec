@@ -13,6 +13,7 @@ License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://github.com/steveire/grantlee/releases/download/v%{version}/grantlee-%{version}.tar.gz
 # Source0-md5:	4ef8eae5dd61e3c7603d76208eb4d922
+Patch0:		x87fix.patch
 URL:		http://www.grantlee.org/
 BuildRequires:	Qt5Core-devel >= %{qt_ver}
 BuildRequires:	Qt5Gui-devel >= %{qt_ver}
@@ -59,6 +60,7 @@ Pliki nagłówkowe bibliotek grantlee.
 
 %prep
 %setup -q -n grantlee-%{version}
+%patch0 -p1
 
 %build
 install -d build
