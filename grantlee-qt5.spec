@@ -1,4 +1,5 @@
-
+#
+# Conditional build:
 %bcond_without	tests		# unit tests
 
 %define		qt_ver		5.3.0
@@ -8,7 +9,7 @@ Summary:	Grantlee - set of frameworks for use with Qt 5
 Summary(pl.UTF-8):	Grantlee - zbiór szkieletów do wykorzystania z Qt 5
 Name:		grantlee-qt5
 Version:	5.3.1
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://github.com/steveire/grantlee/releases/download/v%{version}/grantlee-%{version}.tar.gz
@@ -34,6 +35,9 @@ Requires:	Qt5Gui >= %{qt_ver}
 Requires:	Qt5Script >= %{qt_ver}
 Conflicts:	grantlee-qt6 < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# some combo of -fgcse and inlining triggers some miscompilation (two enum-compare tests fail) with gcc 14.2
+%define		specflags_x86_64	-fno-gcse -fno-inline-functions -fno-partial-inlining
 
 %description
 Grantlee is a string template engine based on the Django template
